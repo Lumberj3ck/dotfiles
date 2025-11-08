@@ -27,8 +27,9 @@ export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 
 
-xinput set-prop "ASUE1305:00 04F3:3212 Touchpad"  "libinput Tapping Enabled" 1
-xinput set-prop "ASUE1305:00 04F3:3212 Touchpad"  "libinput Natural Scrolling Enabled" 1
+xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Tapping Enabled" 1
+xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Natural Scrolling Enabled" 1
+xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Scrolling Pixel Distance" 50
 
 # xinput set-prop "ASUE1305:00 04F3:3212 Touchpad"  "libinput Tapping Enabled" 1
 # setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'
