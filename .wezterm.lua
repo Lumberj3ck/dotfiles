@@ -20,7 +20,7 @@ config.integrated_title_button_style = "Windows"
 config.integrated_title_buttons = { 'Hide', 'Maximize', 'Close' }
 
 
-config.leader = { key="a", mods="CTRL" }
+config.leader = { key="w", mods="CTRL" }
 config.keys = {
         { key = "a", mods = "LEADER|CTRL",  action=wezterm.action{SendString="\x01"}},
         { key = "-", mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
@@ -56,5 +56,4 @@ config.keys = {
 }
 
 
--- Finally, return the configuration to wezterm:
 return config

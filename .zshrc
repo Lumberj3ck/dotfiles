@@ -31,8 +31,8 @@ xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cu
 xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Natural Scrolling Enabled" 1
 xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Scrolling Pixel Distance" 50
 
-# xinput set-prop "ASUE1305:00 04F3:3212 Touchpad"  "libinput Tapping Enabled" 1
-# setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'
+setxkbmap -option
+setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
