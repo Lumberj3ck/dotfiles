@@ -3,10 +3,8 @@ local lsp_servers = {
     'quick_lint_js',
     'pyright',
     'gopls',
-    -- 'pyre',
-    -- 'ruff_lsp',
-    'ruff',
-    'jdtls'
+    'jdtls',
+    'texlab',
 }
 return {
 	{

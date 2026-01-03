@@ -10,17 +10,16 @@ config.initial_cols = 120
 config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
-config.color_scheme = 'catppuccin-frappe'
+config.color_scheme = 'catppuccin-mocha'
 
 config.font_size = 10
 
-config.enable_tab_bar = true
+config.enable_tab_bar = false
 config.window_decorations = " RESIZE"
 config.integrated_title_button_style = "Windows"
 config.integrated_title_buttons = { 'Hide', 'Maximize', 'Close' }
 
-
-config.leader = { key="w", mods="CTRL" }
+config.leader = { key="q", mods="CTRL" }
 config.keys = {
         { key = "a", mods = "LEADER|CTRL",  action=wezterm.action{SendString="\x01"}},
         { key = "-", mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
@@ -47,7 +46,7 @@ config.keys = {
         { key = "&", mods = "LEADER|SHIFT", action=wezterm.action{CloseCurrentTab={confirm=true}}},
         { key = "x", mods = "LEADER",       action=wezterm.action{CloseCurrentPane={confirm=true}}},
         { key = "n", mods="SHIFT|CTRL",     action="ToggleFullScreen" },
-        { key ="v",  mods="SHIFT|CTRL",    action=wezterm.action.PasteFrom 'PrimarySelection'},
+        { key ="v",  mods="SHIFT|CTRL",    action=wezterm.action.PasteFrom 'Clipboard'},
         { key ="c",  mods="SHIFT|CTRL",    action=wezterm.action.CopyTo 'Clipboard'},
         { key = "+", mods="SHIFT|CTRL",     action="IncreaseFontSize" },
         { key = "-", mods="SHIFT|CTRL",     action="DecreaseFontSize" },
