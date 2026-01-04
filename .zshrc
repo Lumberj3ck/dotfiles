@@ -28,17 +28,17 @@ export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 
 
-xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Tapping Enabled" 1
-xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Natural Scrolling Enabled" 1
-xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Scrolling Pixel Distance" 50
-
+# xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Tapping Enabled" 1
+# xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Natural Scrolling Enabled" 1
+# xinput set-prop $(xinput --list | grep -i 'touchpad' | grep -oE 'id=[0-9]+' | cut -d= -f2) "libinput Scrolling Pixel Distance" 50
+#
 # xinput set-prop "ASUE1305:00 04F3:3212 Touchpad"  "libinput Tapping Enabled" 1
-setxkbmap -option
-setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'
+# setxkbmap -option
+# setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'
 
-if ! lsusb | grep -iq "Keychron"; then
-    setxkbmap -option "ctrl:swap_ralt_rctl"
-fi
+# if ! lsusb | grep -iq "Keychron"; then
+#     setxkbmap -option "ctrl:swap_ralt_rctl"
+# fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -143,12 +143,12 @@ source $ZSH/oh-my-zsh.sh
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.resh/shellrc ] && source ~/.resh/shellrc # this line was added by RESH
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
 
 eval "$(zoxide init zsh)"
