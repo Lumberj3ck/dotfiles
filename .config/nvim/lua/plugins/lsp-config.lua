@@ -24,7 +24,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local config = require("lspconfig")
             local opts = { noremap=true, silent=true }
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -58,7 +57,7 @@ return {
             end
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 			for _, lsp in pairs(lsp_servers) do
-				config[lsp].setup({capabilities = capabilities, on_attach = on_attach})
+                vim.lsp.config(lsp, {capabilities = capabilities, on_attach = on_attach})
 			end
 		end
 	}
