@@ -29,6 +29,10 @@ vim.keymap.set('n', '<C-l>', '<Cmd>bprev<CR>')
 vim.keymap.set('n', 'gw', '<Cmd>bd!<CR>')
 vim.keymap.set('n', '<Space><Enter>', 'o<Esc>')
 
+
+vim.keymap.set('v', '<Tab>', '>gv')
+vim.keymap.set('v', '<S-Tab>', '<gv')
+
 for i = 1, 9 do
   vim.keymap.set('n', '<leader>' .. i, i .. 'gt', { noremap = true, silent = true })
 end

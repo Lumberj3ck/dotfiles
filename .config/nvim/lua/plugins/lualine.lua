@@ -9,6 +9,16 @@ return {
 				section_separators = '',
 				theme = 'auto',
 			},
+            sections = {
+              lualine_c = {
+                  {
+                  'filename',
+                   path = 1,
+                }
+              }
+            },
 		}
 	end
 }
+
+
