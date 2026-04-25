@@ -21,7 +21,7 @@ ls.add_snippets("go", {
     },
     {
         ls.text_node("if err != nil{"),
-        ls.text_node({"", "\tpanic(err)", }),
+        ls.text_node({"", "\treturn err", }),
         ls.text_node({"", "}",})
     }),
 })

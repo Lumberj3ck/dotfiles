@@ -16,13 +16,17 @@ export PATH=/home/lumberjack/.local/bin:$GOPATH/bin:/snap/bin:/snap/nvim/current
 export PATH=/opt/nvim-linux-x86_64/bin/:/opt/zen.linux-x86_64/zen/:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export desktop=/usr/share/applications
-alias  py="python3"
+alias  py="python3.12"
 alias  qr="qrencode -m 2 -t utf8 <<< $1"
 alias  bat="acpi"
-alias  wifi="nmtui"
+alias  wifi="impala"
+alias  clip="wl-copy"
 alias  crop="gthumb"
 alias  bru="brightnessctl set 10%+"
 alias  brd="brightnessctl set 10%-"
+alias  cloc="cloc --exclude-list-file=.gitignore $*"
+alias get-secret="gpg --export-secret-key -a alanuldashev@gmail.com | clip"
+alias get-pub="gpg --export -a alanuldashev@gmail.com | clip"
 
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
@@ -152,3 +156,13 @@ export NVM_DIR="$HOME/.nvm"
 # . "$HOME/.local/bin/env"
 
 eval "$(zoxide init zsh)"
+
+. "$HOME/.local/share/../bin/env"
+
+# opencode
+export PATH=/home/lumberj3ck/.opencode/bin:$PATH
+
+export GDK_SCALE=2
+export GDK_DPI_SCALE=1
+
+eval "$(keychain --eval --quiet id_rsa)"

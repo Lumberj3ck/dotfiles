@@ -1,9 +1,9 @@
 return {
 	-- "folke/tokyonight.nvim",
 	-- 'Mofiqul/dracula.nvim',
-    -- "catppuccin/nvim",
+    "catppuccin/nvim",
     -- "Shatur/neovim-ayu",
-    "rebelot/kanagawa.nvim",
+    -- "rebelot/kanagawa.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
@@ -26,6 +26,6 @@ return {
 		-- 	-- }
   --       }
   --       })
-		vim.cmd.colorscheme 'kanagawa-wave'
+		vim.cmd.colorscheme 'catppuccin-mocha'
 	end,
 }

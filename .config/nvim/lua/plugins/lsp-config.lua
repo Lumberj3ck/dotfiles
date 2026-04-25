@@ -1,6 +1,6 @@
 local lsp_servers = {
     'lua_ls',
-    'quick_lint_js',
+    'ts_ls',
     'pyright',
     'gopls',
     'jdtls',
