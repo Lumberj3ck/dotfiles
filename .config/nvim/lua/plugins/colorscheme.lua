@@ -1,7 +1,9 @@
 return {
+
+    "ellisonleao/gruvbox.nvim",
 	-- "folke/tokyonight.nvim",
 	-- 'Mofiqul/dracula.nvim',
-    "catppuccin/nvim",
+    -- "catppuccin/nvim",
     -- "Shatur/neovim-ayu",
     -- "rebelot/kanagawa.nvim",
 	lazy = false,
@@ -26,6 +28,7 @@ return {
 		-- 	-- }
   --       }
   --       })
-		vim.cmd.colorscheme 'catppuccin-mocha'
+        vim.o.background = "dark"
+		vim.cmd.colorscheme 'gruvbox'
 	end,
 }
