@@ -10,6 +10,7 @@
 
 # Path to your oh-my-zsh installation.
 export EDITOR=nvim
+export GPG_TTY=$(tty)
 export ZSH="$HOME/.oh-my-zsh"
 export GOPATH=~/code
 export PATH=/home/lumberjack/.local/bin:$GOPATH/bin:/snap/bin:/snap/nvim/current/user/bin:/usr/local/go/bin:$PATH
