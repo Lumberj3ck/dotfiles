@@ -1,0 +1,13 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Category": "Windows and Tasks",
+        "Description": "Shows virtual desktop occupancy and the current desktop",
+        "EnabledByDefault": true,
+        "Id": "local.currentdesktop",
+        "License": "MIT",
+        "Name": "Virtual Desktop Occupancy",
+        "Version": "1.0.0"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
