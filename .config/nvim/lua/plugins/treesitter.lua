@@ -1,18 +1,18 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-    },
+    branch = "main",
+    lazy = false,
     build = ':TSUpdate',
     config = function()
-        require('nvim-treesitter.configs').setup {
-            ensure_installed = { "c", "lua", "vim", "python", "query", "html", "htmldjango"},
-            sync_install = false,
-            auto_install = true,
+        local parsers = { "c", "go", "lua", "vim", "python", "query", "html" }
 
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            }, }
+        require('nvim-treesitter').install(parsers)
+
+        vim.api.nvim_create_autocmd('FileType', {
+            pattern = parsers,
+            callback = function()
+                vim.treesitter.start()
+            end,
+        })
     end
 }

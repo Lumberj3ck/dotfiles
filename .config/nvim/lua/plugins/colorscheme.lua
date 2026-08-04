@@ -1,11 +1,11 @@
 return {
 
-    "ellisonleao/gruvbox.nvim",
+    -- "ellisonleao/gruvbox.nvim",
 	-- "folke/tokyonight.nvim",
 	-- 'Mofiqul/dracula.nvim',
     -- "catppuccin/nvim",
     -- "Shatur/neovim-ayu",
-    -- "rebelot/kanagawa.nvim",
+    "rebelot/kanagawa.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
@@ -29,6 +29,6 @@ return {
   --       }
   --       })
         vim.o.background = "dark"
-		vim.cmd.colorscheme 'gruvbox'
+		vim.cmd.colorscheme 'kanagawa'
 	end,
 }

@@ -1,8 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
 import org.kde.plasma.components 3.0 as PlasmaComponents
-import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasmoid
+import org.kde.plasma.workspace.dbus as DBus
 import org.kde.taskmanager as TaskManager
 
 PlasmoidItem {
@@ -43,6 +43,19 @@ PlasmoidItem {
         }
 
         occupiedDesktopIds = occupied;
+    }
+
+    function activateDesktop(desktopNumber) {
+        DBus.SessionBus.asyncCall({
+            "service": "org.kde.KWin",
+            "path": "/KWin",
+            "iface": "org.kde.KWin",
+            "member": "setCurrentDesktop",
+            "signature": "(i)",
+            "arguments": [new DBus.int32(desktopNumber)]
+        }, () => {}, error => {
+            console.warn("Failed to switch virtual desktop:", error.message);
+        });
     }
 
     TaskManager.TasksModel {
@@ -107,8 +120,14 @@ PlasmoidItem {
                         height: 9
                         radius: 2
                         visible: isCurrent
-                        color: PlasmaCore.Theme.textColor
+                        color: desktopNumber.color
                         opacity: 0.65
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: root.activateDesktop(index + 1)
                     }
                 }
             }
