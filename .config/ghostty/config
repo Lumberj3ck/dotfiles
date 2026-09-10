@@ -1,5 +1,4 @@
-# Dynamic theme colors
-config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
+background-opacity = 0.95
 
 # Font
 # font-family = "Lilex"

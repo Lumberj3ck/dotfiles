@@ -4,6 +4,9 @@ vim.o.hlsearch = false
 vim.o.mouse = 'a'
 vim.o.clipboard = 'unnamedplus'
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
@@ -17,6 +20,7 @@ vim.opt.scrolloff = 8
 vim.opt.swapfile = false
 
 vim.opt.relativenumber = true
+vim.opt.statuscolumn = "%=%{v:relnum == 0 ? '0' : v:relnum} "
 
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.o.termguicolors = true
@@ -53,6 +57,7 @@ vim.filetype.add({
         ["helmfile.*%.ya?ml"] = "helm",
     },
 })
+
 
 
 
