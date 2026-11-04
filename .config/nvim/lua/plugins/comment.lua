@@ -1,7 +1,13 @@
 return {
 	"numToStr/Comment.nvim",
 	config = function()
-		require('Comment').setup()
+		require('Comment').setup({
+			pre_hook = function()
+				if vim.bo.filetype == 'tex' then
+					return vim.bo.commentstring
+				end
+			end,
+		})
 		vim.keymap.set('n', '<leader>/', function()
 			return vim.v.count == 0
 			and '<Plug>(comment_toggle_linewise_current)'

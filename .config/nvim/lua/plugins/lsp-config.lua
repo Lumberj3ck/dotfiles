@@ -3,6 +3,7 @@ local lsp_servers = {
     'ts_ls',
     'pyright',
     'gopls',
+    'clangd',
     'jdtls',
     'texlab',
 }
@@ -62,4 +63,3 @@ return {
 		end
 	}
 }
-
